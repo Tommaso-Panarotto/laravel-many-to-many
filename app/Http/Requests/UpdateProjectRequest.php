@@ -30,7 +30,8 @@ class UpdateProjectRequest extends FormRequest
             "author" => ["required", "string", "min:3", "max:40"],
             "url" => ["required", "url"],
             "description" => ["required", "string", "min:10"],
-            "type_id" => ["required", "numeric", "integer", "exists:types,id"]
+            "type_id" => ["required", "numeric", "integer", "exists:types,id"],
+            "technologies" => ["required", "array", "exists:technologies,id"]
         ];
     }
 }
