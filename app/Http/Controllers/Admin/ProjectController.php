@@ -49,6 +49,8 @@ class ProjectController extends Controller
 
         $project = Project::create($formData);
 
+        $project->technologies()->sync($formData["technologies"]);
+
         return redirect()->route("admin.projects.show", ["id" => $project->id]);
     }
 
@@ -59,7 +61,8 @@ class ProjectController extends Controller
     {
         $types = Type::all();
         $project = Project::findOrFail($id);
-        return view("admin.projects.edit", compact("project", "types"));
+        $technologies = Technology::all();
+        return view("admin.projects.edit", compact("project", "types", "technologies"));
     }
 
     /**
@@ -72,6 +75,8 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
 
         $project->update($formData);
+
+        $project->technologies()->sync($formData["technologies"]);
 
         return redirect()->route("admin.projects.show", ["id" => $project->id]);
     }
