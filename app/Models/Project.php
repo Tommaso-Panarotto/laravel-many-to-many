@@ -14,7 +14,6 @@ class Project extends Model
     protected $fillable = [
         "title",
         "author",
-        "language",
         "url",
         "description",
         "type_id"

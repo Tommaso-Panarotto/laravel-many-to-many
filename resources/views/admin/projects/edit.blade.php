@@ -29,16 +29,6 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="language" class="form-label">linguaggio usato:</label>
-                <input type="text" class="form-control" id="project-language" name="language"
-                    value="{{ old('language', $project->language) }}">
-                @error('language')
-                    <div class="alert alert-warning">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="mb-3">
                 <label for="url" class="form-label">link progetto:</label>
                 <input type="text" class="form-control" id="project-url" name="url"
                     value="{{ old('url', $project->url) }}">

@@ -10,7 +10,6 @@
                     <tr>
                         <th scope="col"> </th>
                         <th scope="col">Title</th>
-                        <th scope="col">Language</th>
                         <th scope="col">link</th>
                         <th scope="col">Function</th>
                     </tr>
@@ -21,7 +20,6 @@
                         <tr>
                             <th scope="row">{{ $project->id }}</th>
                             <td>{{ $project->title }}</td>
-                            <td>{{ $project->language }}</td>
                             <td><a href="{{ $project->url }}">{{ $project->url }}</a></td>
                             <td>
                                 <form action="{{ route('admin.projects.restore', $project->id) }}" class="d-inline"

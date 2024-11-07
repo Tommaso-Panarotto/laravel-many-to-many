@@ -12,7 +12,7 @@ class UpdateProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if (Auth::check()){
+        if (Auth::check()) {
             return true;
         }
         return false;
@@ -28,9 +28,9 @@ class UpdateProjectRequest extends FormRequest
         return [
             "title" => ["required", "string", "min:3", "max:40"],
             "author" => ["required", "string", "min:3", "max:40"],
-            "language" => ["required", "string", "min:1", "max:20"],
             "url" => ["required", "url"],
-            "description" => ["required", "string", "min:10"]
+            "description" => ["required", "string", "min:10"],
+            "type_id" => ["required", "numeric", "integer", "exists:types,id"]
         ];
     }
 }

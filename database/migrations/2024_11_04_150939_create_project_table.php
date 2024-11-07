@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string("title", 40);
             $table->string("author", 40);
-            $table->string("language", 20);
             $table->string('url');
             $table->text("description");
             $table->softDeletes();

@@ -18,7 +18,6 @@ class ProjectSeeder extends Seeder
         $project = new Project();
         $project->title = "BoolFlix";
         $project->author = "Tommaso-Panarotto";
-        $project->language = "JS";
         $project->url = "https://github.com/Tommaso-Panarotto/vite-boolflix";
         $project->description = "Simulazione di una libreria stile netfl";
         $project->type_id = 1;

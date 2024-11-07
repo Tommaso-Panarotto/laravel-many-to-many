@@ -26,16 +26,6 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="language" class="form-label">linguaggio usato:</label>
-                <input type="text" class="form-control" id="project-language" name="language"
-                    value="{{ old('language') }}">
-                @error('language')
-                    <div class="alert alert-warning">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="mb-3">
                 <label for="type_id" class="form-label">seleziona una tipologia progetto:</label>
                 <select class="form-control" aria-label="Default select example" id="type_id" name="type_id">
                     @foreach ($types as $type)
