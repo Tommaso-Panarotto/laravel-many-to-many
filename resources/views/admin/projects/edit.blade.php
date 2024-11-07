@@ -28,6 +28,24 @@
                     </div>
                 @enderror
             </div>
+            <div class="mb-3 text-start">
+                <label class="form-label" for="project-technology">Technologies:</label>
+                @foreach ($technologies as $technology)
+                    <div class="form-check" id="project-technology">
+                        <input class="form-check-input" type="checkbox" name="technologies[]"
+                            id="technlogy-{{ $technology->id }}" value="{{ $technology->id }}">
+                        <label name="technologies[]" class="form-check-label" name="technologies[]"
+                            for="technlogy-{{ $technology->id }}">
+                            {{ $technology->name }}
+                        </label>
+                    </div>
+                @endforeach
+            </div>
+            @error('technologies')
+                <div class="alert alert-warning">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="mb-3">
                 <label for="url" class="form-label">link progetto:</label>
                 <input type="text" class="form-control" id="project-url" name="url"
