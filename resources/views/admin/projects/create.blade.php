@@ -38,6 +38,11 @@
                     </div>
                 @endforeach
             </div>
+            @error('technologies')
+                <div class="alert alert-warning">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="mb-3">
                 <label for="type_id" class="form-label">seleziona una tipologia progetto:</label>
                 <select class="form-control" aria-label="Default select example" id="type_id" name="type_id">
