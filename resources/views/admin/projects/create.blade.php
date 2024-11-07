@@ -25,6 +25,19 @@
                     </div>
                 @enderror
             </div>
+            <div class="mb-3 text-start">
+                <label class="form-label" for="project-technology">Technologies:</label>
+                @foreach ($technologies as $technology)
+                    <div class="form-check" id="project-technology">
+                        <input class="form-check-input" type="checkbox" name="technologies[]"
+                            id="technlogy-{{ $technology->id }}" value="{{ $technology->id }}">
+                        <label name="technologies[]" class="form-check-label" name="technologies[]"
+                            for="technlogy-{{ $technology->id }}">
+                            {{ $technology->name }}
+                        </label>
+                    </div>
+                @endforeach
+            </div>
             <div class="mb-3">
                 <label for="type_id" class="form-label">seleziona una tipologia progetto:</label>
                 <select class="form-control" aria-label="Default select example" id="type_id" name="type_id">
